@@ -8,13 +8,14 @@
 import SwiftUI
 
 @main
-struct movieApp: App {
-    let persistenceController = PersistenceController.shared
+struct MovieApp: App {
+    @StateObject private var appRootManager = AppRootManager()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RootView()
+                .environmentObject(appRootManager)
+                .preferredColorScheme(.light)
         }
     }
 }

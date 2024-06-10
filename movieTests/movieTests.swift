@@ -6,31 +6,136 @@
 //
 
 import XCTest
+import Alamofire
+import CoreData
 @testable import movie
 
-final class movieTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class AuthManagerTests: XCTestCase {
+    
+    func testValidLogin() {
+        let authManager = AuthManager()
+        XCTAssertTrue(authManager.validateLogin(username: "VVVBB", password: "@bcd1234"), "Valid login failed")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testInvalidLogin() {
+        let authManager = AuthManager()
+        XCTAssertFalse(authManager.validateLogin(username: "invalid", password: "password"), "Invalid login passed")
     }
+}
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+class CoreDataManagerTests: XCTestCase {
+    
+    var coreDataManager: CoreDataManager!
+    
+    override func setUp() {
+        super.setUp()
+        coreDataManager = CoreDataManager.shared
+        clearUserData()
+        clearMovieData()
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    override func tearDown() {
+        clearUserData()
+        clearMovieData()
+        coreDataManager = nil
+        super.tearDown()
+    }
+    
+    func clearUserData() {
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        let context = coreDataManager.persistentContainer.viewContext
+        do {
+            let users = try context.fetch(fetchRequest)
+            for user in users {
+                context.delete(user)
+            }
+            try context.save()
+        } catch {
+            print("Failed to clear user data: \(error)")
         }
     }
+    
+    func clearMovieData() {
+        let fetchRequest: NSFetchRequest<CDMovie> = CDMovie.fetchRequest()
+        let context = coreDataManager.persistentContainer.viewContext
+        do {
+            let movies = try context.fetch(fetchRequest)
+            for movie in movies {
+                context.delete(movie)
+            }
+            try context.save()
+        } catch {
+            print("Failed to clear movie data: \(error)")
+        }
+    }
+    
+    func testSaveUser() {
+        XCTAssertTrue(coreDataManager.saveUser(username: "testUser", password: "testPassword"), "Failed to save user")
+        XCTAssertFalse(coreDataManager.saveUser(username: "testUser", password: "testPassword"), "User with same username saved again")
+    }
+    
+    func testCheckUsernameExists() {
+        let savedSuccessfully = coreDataManager.saveUser(username: "testUser", password: "testPassword")
+        XCTAssertTrue(savedSuccessfully, "Failed to save user")
+        
+        XCTAssertTrue(coreDataManager.checkUsernameExists(username: "testUser"), "Username should exist after saving")
+    }
+    
+    func testCheckUsernameAndPassword() {
+        let savedSuccessfully = coreDataManager.saveUser(username: "testUser", password: "testPassword")
+        XCTAssertTrue(savedSuccessfully, "Failed to save user")
+        
+        XCTAssertTrue(coreDataManager.checkUsernameAndPassword(username: "testUser", password: "testPassword"), "Valid username and password check failed")
+        XCTAssertFalse(coreDataManager.checkUsernameAndPassword(username: "testUser", password: "invalidPassword"), "Invalid password check passed")
+        XCTAssertFalse(coreDataManager.checkUsernameAndPassword(username: "invalidUser", password: "testPassword"), "Invalid username check passed")
+    }
+    
+    func testSaveMovie() {
+        let movie = Movie(Title: "Test Movie", Year: "2023", imdbID: "tt1234567", Poster: "testPosterURL")
+        
+        coreDataManager.saveMovie(movie)
+        
+        let movies = coreDataManager.fetchMovies()
+        XCTAssertEqual(movies.count, 1, "Failed to save movie")
+        
+        let savedMovie = movies.first!
+        XCTAssertEqual(savedMovie.Title, "Test Movie", "Incorrect movie title")
+        XCTAssertEqual(savedMovie.Year, "2023", "Incorrect movie year")
+        XCTAssertEqual(savedMovie.imdbID, "tt1234567", "Incorrect IMDb ID")
+        XCTAssertEqual(savedMovie.Poster, "testPosterURL", "Incorrect poster URL")
+    }
+    
+    func testFetchMovies() {
+        let movie1 = Movie(Title: "Movie 1", Year: "2021", imdbID: "tt1111111", Poster: "poster1URL")
+        let movie2 = Movie(Title: "Movie 2", Year: "2022", imdbID: "tt2222222", Poster: "poster2URL")
+        
+        coreDataManager.saveMovie(movie1)
+        coreDataManager.saveMovie(movie2)
+        
+        let movies = coreDataManager.fetchMovies()
+        XCTAssertEqual(movies.count, 2, "Failed to fetch movies")
+    }
+}
 
+class APITests: XCTestCase {
+    
+    func testFetchMovies() {
+        let promise = expectation(description: "Fetch movies expectation")
+        
+        let url = "http://www.omdbapi.com/?apikey=6fc87060&s=Marvel"
+        
+        AF.request(url).responseDecodable(of: MovieResponse.self) { response in
+            switch response.result {
+            case .success(let movieResponse):
+                XCTAssertNotNil(movieResponse, "Response should not be nil")
+                XCTAssertNotNil(movieResponse.Search, "Search results should not be nil")
+                XCTAssertTrue(movieResponse.Search.count > 0, "Search results should not be empty")
+                promise.fulfill()
+            case .failure(let error):
+                XCTFail("Failed to fetch movies: \(error.localizedDescription)")
+            }
+        }
+        
+        wait(for: [promise], timeout: 10)
+    }
 }

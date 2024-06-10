@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F519A47D2C14A97300A2570A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519A47C2C14A97300A2570A /* OnboardingView.swift */; };
+		F519A47F2C14AFDB00A2570A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519A47E2C14AFDB00A2570A /* SignUpView.swift */; };
+		F519A4812C14C1BE00A2570A /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519A4802C14C1BE00A2570A /* AppRootManager.swift */; };
 		F51D5F0B2C1349CE004ECBAE /* movieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F0A2C1349CE004ECBAE /* movieApp.swift */; };
-		F51D5F0D2C1349CE004ECBAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F0C2C1349CE004ECBAE /* ContentView.swift */; };
+		F51D5F0D2C1349CE004ECBAE /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F0C2C1349CE004ECBAE /* Secure.swift */; };
 		F51D5F0F2C1349CF004ECBAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51D5F0E2C1349CF004ECBAE /* Assets.xcassets */; };
 		F51D5F122C1349CF004ECBAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51D5F112C1349CF004ECBAE /* Preview Assets.xcassets */; };
-		F51D5F142C1349CF004ECBAE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F132C1349CF004ECBAE /* Persistence.swift */; };
+		F51D5F142C1349CF004ECBAE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F132C1349CF004ECBAE /* CoreDataManager.swift */; };
 		F51D5F172C1349CF004ECBAE /* movie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F152C1349CF004ECBAE /* movie.xcdatamodeld */; };
 		F51D5F212C1349CF004ECBAE /* movieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F202C1349CF004ECBAE /* movieTests.swift */; };
 		F51D5F2B2C1349CF004ECBAE /* movieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F2A2C1349CF004ECBAE /* movieUITests.swift */; };
 		F51D5F2D2C1349CF004ECBAE /* movieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F2C2C1349CF004ECBAE /* movieUITestsLaunchTests.swift */; };
+		F51D5F3C2C134AA8004ECBAE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F3B2C134AA8004ECBAE /* LoginView.swift */; };
+		F51D5F3E2C134AEA004ECBAE /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F3D2C134AEA004ECBAE /* MovieListView.swift */; };
+		F51D5F412C134B28004ECBAE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F51D5F402C134B28004ECBAE /* Alamofire */; };
+		F51D5F432C134B2F004ECBAE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F51D5F422C134B2F004ECBAE /* KeychainSwift */; };
+		F51D5F452C134B61004ECBAE /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F442C134B61004ECBAE /* MovieDetailView.swift */; };
+		F51D5F472C134BA9004ECBAE /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D5F462C134BA9004ECBAE /* MovieModel.swift */; };
+		F52569FF2C15B0A10077EDFA /* Crypto in Frameworks */ = {isa = PBXBuildFile; productRef = F52569FE2C15B0A10077EDFA /* Crypto */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,18 +46,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F519A47C2C14A97300A2570A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F519A47E2C14AFDB00A2570A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F519A4802C14C1BE00A2570A /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
 		F51D5F072C1349CE004ECBAE /* movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51D5F0A2C1349CE004ECBAE /* movieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieApp.swift; sourceTree = "<group>"; };
-		F51D5F0C2C1349CE004ECBAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F51D5F0C2C1349CE004ECBAE /* Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
 		F51D5F0E2C1349CF004ECBAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51D5F112C1349CF004ECBAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F51D5F132C1349CF004ECBAE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		F51D5F132C1349CF004ECBAE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F51D5F162C1349CF004ECBAE /* movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = movie.xcdatamodel; sourceTree = "<group>"; };
 		F51D5F1C2C1349CF004ECBAE /* movieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = movieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51D5F202C1349CF004ECBAE /* movieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieTests.swift; sourceTree = "<group>"; };
 		F51D5F262C1349CF004ECBAE /* movieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = movieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51D5F2A2C1349CF004ECBAE /* movieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieUITests.swift; sourceTree = "<group>"; };
 		F51D5F2C2C1349CF004ECBAE /* movieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F51D5F3B2C134AA8004ECBAE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F51D5F3D2C134AEA004ECBAE /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
+		F51D5F442C134B61004ECBAE /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		F51D5F462C134BA9004ECBAE /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		F51D5F4A2C134FE8004ECBAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52569FF2C15B0A10077EDFA /* Crypto in Frameworks */,
+				F51D5F432C134B2F004ECBAE /* KeychainSwift in Frameworks */,
+				F51D5F412C134B28004ECBAE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +103,7 @@
 				F51D5F1F2C1349CF004ECBAE /* movieTests */,
 				F51D5F292C1349CF004ECBAE /* movieUITests */,
 				F51D5F082C1349CE004ECBAE /* Products */,
+				F51D5F3F2C134B28004ECBAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,10 +120,18 @@
 		F51D5F092C1349CE004ECBAE /* movie */ = {
 			isa = PBXGroup;
 			children = (
+				F51D5F4A2C134FE8004ECBAE /* Info.plist */,
 				F51D5F0A2C1349CE004ECBAE /* movieApp.swift */,
-				F51D5F0C2C1349CE004ECBAE /* ContentView.swift */,
+				F519A47C2C14A97300A2570A /* OnboardingView.swift */,
+				F51D5F3B2C134AA8004ECBAE /* LoginView.swift */,
+				F519A47E2C14AFDB00A2570A /* SignUpView.swift */,
+				F51D5F3D2C134AEA004ECBAE /* MovieListView.swift */,
+				F51D5F442C134B61004ECBAE /* MovieDetailView.swift */,
+				F51D5F462C134BA9004ECBAE /* MovieModel.swift */,
+				F51D5F0C2C1349CE004ECBAE /* Secure.swift */,
 				F51D5F0E2C1349CF004ECBAE /* Assets.xcassets */,
-				F51D5F132C1349CF004ECBAE /* Persistence.swift */,
+				F51D5F132C1349CF004ECBAE /* CoreDataManager.swift */,
+				F519A4802C14C1BE00A2570A /* AppRootManager.swift */,
 				F51D5F152C1349CF004ECBAE /* movie.xcdatamodeld */,
 				F51D5F102C1349CF004ECBAE /* Preview Content */,
 			);
@@ -133,6 +163,13 @@
 			path = movieUITests;
 			sourceTree = "<group>";
 		};
+		F51D5F3F2C134B28004ECBAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +186,11 @@
 			dependencies = (
 			);
 			name = movie;
+			packageProductDependencies = (
+				F51D5F402C134B28004ECBAE /* Alamofire */,
+				F51D5F422C134B2F004ECBAE /* KeychainSwift */,
+				F52569FE2C15B0A10077EDFA /* Crypto */,
+			);
 			productName = movie;
 			productReference = F51D5F072C1349CE004ECBAE /* movie.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +263,11 @@
 				Base,
 			);
 			mainGroup = F51D5EFE2C1349CE004ECBAE;
+			packageReferences = (
+				F51D5F392C134A45004ECBAE /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				F51D5F3A2C134A56004ECBAE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F52569FD2C15B0590077EDFA /* XCRemoteSwiftPackageReference "swift-crypto" */,
+			);
 			productRefGroup = F51D5F082C1349CE004ECBAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,10 +310,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F51D5F142C1349CF004ECBAE /* Persistence.swift in Sources */,
-				F51D5F0D2C1349CE004ECBAE /* ContentView.swift in Sources */,
+				F51D5F142C1349CF004ECBAE /* CoreDataManager.swift in Sources */,
+				F51D5F0D2C1349CE004ECBAE /* Secure.swift in Sources */,
 				F51D5F172C1349CF004ECBAE /* movie.xcdatamodeld in Sources */,
+				F519A4812C14C1BE00A2570A /* AppRootManager.swift in Sources */,
+				F519A47D2C14A97300A2570A /* OnboardingView.swift in Sources */,
+				F51D5F3C2C134AA8004ECBAE /* LoginView.swift in Sources */,
+				F51D5F472C134BA9004ECBAE /* MovieModel.swift in Sources */,
+				F519A47F2C14AFDB00A2570A /* SignUpView.swift in Sources */,
 				F51D5F0B2C1349CE004ECBAE /* movieApp.swift in Sources */,
+				F51D5F3E2C134AEA004ECBAE /* MovieListView.swift in Sources */,
+				F51D5F452C134B61004ECBAE /* MovieDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +486,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"movie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = movie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -460,6 +515,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"movie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = movie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -590,6 +646,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F51D5F392C134A45004ECBAE /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+		F51D5F3A2C134A56004ECBAE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		F52569FD2C15B0590077EDFA /* XCRemoteSwiftPackageReference "swift-crypto" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-crypto.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F51D5F402C134B28004ECBAE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D5F3A2C134A56004ECBAE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F51D5F422C134B2F004ECBAE /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D5F392C134A45004ECBAE /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		F52569FE2C15B0A10077EDFA /* Crypto */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F52569FD2C15B0590077EDFA /* XCRemoteSwiftPackageReference "swift-crypto" */;
+			productName = Crypto;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F51D5F152C1349CF004ECBAE /* movie.xcdatamodeld */ = {
